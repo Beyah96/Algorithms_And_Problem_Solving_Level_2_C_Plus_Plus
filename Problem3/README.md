@@ -40,7 +40,7 @@ The program includes the following functions:
 
  2. **Execute**: Run the compiled program:
  ```
- ./problem2
+ ./problem4
  ```
 TThe program will prompt you to enter a `positive number` and then determine `if the number is perfect`.
 
