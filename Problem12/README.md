@@ -1,4 +1,4 @@
-# Problem: Inverted Number Pattern
+# Problem 12 : Inverted Number Pattern
 
 ## Description
 This C++ program prints an inverted number pattern based on a positive integer input by the user. The number pattern decreases in length and value with each row. The user is prompted to enter a positive integer, and the program then prints the corresponding inverted number pattern.
