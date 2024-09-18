@@ -1,4 +1,4 @@
-# Problem 14 : Inverted Letter Pattern
+# Problem 14: Inverted Letter Pattern
 
 ## Description
 This C++ program prints an inverted letter pattern based on a positive integer input by the user. The rows of the pattern begin with letters starting from 'A' for 1, 'B' for 2, and so on, based on the corresponding ASCII values. Each row contains repeated letters in descending order, with the highest letter on top.
