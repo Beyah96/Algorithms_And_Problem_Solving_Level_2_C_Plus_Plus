@@ -1,20 +1,38 @@
-// Problem3.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
-
 #include <iostream>
+#include <string>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+enum enPerfectNumber{Perfect, NotPerfect};
+
+int ReadNumber() {
+	int Number;
+	do {
+		cout << "Please enter a positive number : ";
+		cin >> Number;
+	} while (Number < 0);
+	return Number;
 }
 
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
+enPerfectNumber CheckNumber(int Number) {
+	int Sum = 0;
+	for (int i = 1; i < Number; i++)
+		if (Number % i == 0)
+			Sum += i;
+	if (Sum == Number)
+		return enPerfectNumber::Perfect;
+	else
+		return enPerfectNumber::NotPerfect;
+}
 
-// Astuces pour bien démarrer : 
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
+void PrintNumberType(enPerfectNumber NumberType) {
+	if (NumberType == enPerfectNumber::Perfect)
+		cout << "Is Perfect";
+	else
+		cout << "Is not Perfect";
+}
+
+int main() {
+	PrintNumberType(CheckNumber(ReadNumber()));
+	return 0;
+}
