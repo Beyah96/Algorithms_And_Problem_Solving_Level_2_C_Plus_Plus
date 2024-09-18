@@ -1,72 +1,69 @@
-# Problem 13 : # Problem: Ascending Number Pattern
+# Problem 11 : Palindrome Number Checker
 
 ## Description
-This C++ program prints an ascending number pattern based on a positive integer input by the user. Each row of the pattern consists of the row number repeated multiple times, starting from `1` and increasing up to the number entered by the user.
+This C++ program checks if a given positive integer is a palindrome. A palindrome number is one that reads the same forward and backward (e.g., 121, 1331). The program prompts the user to enter a positive number, reverses it, and then checks if the reversed number is equal to the original.
 
-For example, if the user enters `5`, the output will be:
-
-```
-1 
-22 
-333 
-4444 
-55555
-```
-
-### Program Details
-
-- **`ReadName` Function**:
-  - Prompts the user to enter a positive integer.
-  - Ensures that the input is positive by repeatedly asking for the input until a valid number is provided.
-
-- **`PrintInvertedNumberPattern` Function**:
-  - Prints a pattern where each row starts with a number corresponding to the row number and the number is repeated multiple times.
-  - The first row has `1` printed once, the second row has `2` printed twice, and so on.
-
-- **`main` Function**:
-  - The program begins by calling `ReadName` to get the user's input, then calls `PrintInvertedNumberPattern` to print the pattern.
+The program includes the following key components:
+- **`ReadNumber`**: Prompts the user to input a positive integer.
+- **`NumberReversed`**: Reverses the digits of the given number.
+- **`CheckPalindrome`**: Compares the original number and its reversed version to determine if it is a palindrome.
+- **`Print`**: Displays whether the number is a palindrome or not.
 
 ## Code Explanation
 
-- **Headers**: The program uses `<iostream>` for input/output operations.
+- **Headers**: The program includes `<iostream>` for input/output operations.
 
-- **Function `ReadName`**:
-  - Prompts the user to enter a positive integer.
-  - If the user enters a negative number, the function continues asking for a valid input.
+- **Function `ReadNumber`**:
+  - Prompts the user to input a positive number.
+  - The input is validated to ensure it is positive (greater than or equal to zero).
 
-- **Function `PrintInvertedNumberPattern`**:
-  - Uses two nested loops to print the ascending number pattern.
-  - The outer loop runs from `1` to the user’s input number.
-  - The inner loop prints the current row number as many times as its value.
+- **Function `NumberReversed`**:
+  - Reverses the digits of the input number. For example, if the number is `1234`, it returns `4321`.
+
+- **Function `CheckPalindrome`**:
+  - Compares the original number with the reversed version.
+  - Returns `true` if the number is a palindrome, and `false` otherwise.
+
+- **Function `Print`**:
+  - Prints a message indicating whether the number is a palindrome or not based on the result from `CheckPalindrome`.
 
 - **Function `main`**:
-  - Calls `ReadName` to read the user's input and then passes it to `PrintInvertedNumberPattern` to display the pattern.
+  - Reads the user's input number using `ReadNumber`.
+  - Reverses the number using `NumberReversed`.
+  - Checks if the number is a palindrome using `CheckPalindrome`.
+  - Prints the result using `Print`.
 
 ## How to Run
 
-1. **Compile**: Use a C++ compiler to compile the program. For example, using `g++`:
+1. **Compile**: Use a C++ compiler to compile the program. For example, using `g++`, you can compile it with:
    ```bash
-   g++ -o Problem13 Problem13.cpp
+   g++ -o palindrome_checker palindrome_checker.cpp
    ```
 
  2. **Execute**: Run the compiled program:
  ```
-./Problem13
+./Problem11
  ```
-The program will prompt you to enter a positive number and then display the corresponding ascending number pattern.
+The program will prompt you to enter a positive number and then display whether the number is a palindrome or not.
 
 ## Example :
 - Input :
 ```
-Please enter a positive number: 3
+Please enter a positive number: 121
 ```
 - Output:
 ```
-1
-22
-333
+  It is a Palindrome number
 ```
 
+- Input :
+```
+Please enter a positive number: 123
+```
+- Output:
+```
+  It is not a Palindrome number
+```
 
 ## Requirements
 - C++ compiler
