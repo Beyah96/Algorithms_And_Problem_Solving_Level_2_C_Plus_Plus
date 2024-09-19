@@ -1,20 +1,43 @@
-// Problem23.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
-
 #include <iostream>
+#include <cstdlib>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+int ReadNumber(string Message) {
+	int Number;
+	do{
+		cout << Message;
+		cin >> Number;
+	} while (Number < 0);
+	return Number;
 }
 
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
+int RandomNumber(int From, int To){
+	return rand() % (To - From + 1) + From;
+}
 
-// Astuces pour bien démarrer : 
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
+void FillArray(int Arr[100], int& Length) {
+	Length = ReadNumber("How many elements you will enter? : ");
+	for (int i = 1; i <= Length; i++) 
+		Arr[i - 1] = RandomNumber(1, 100);
+}
+
+void PrintArrayElements(int Arr[100], int Length) {
+	cout << "*******************************************" << endl;
+	cout << "***        Array's elements             ***" << endl;
+	cout << "*******************************************" << endl;
+	for (int i = 0; i < Length; i++)
+		cout << "Element [" << i + 1<< "] : " << Arr[i] << endl;
+}
+
+int main() {
+	srand((unsigned)time(NULL));
+	int Arr[100];
+	int Length;
+
+	FillArray(Arr, Length);
+	PrintArrayElements(Arr, Length);
+
+	return 0;
+
+}
