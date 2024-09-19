@@ -34,7 +34,7 @@ void CheckNumber(int Arr[100], int Length) {
 	for (int i = 0; i < Length; i++)
 		if (Arr[i] == SearchedElement)
 			Counter++;
-	cout << SearchedElement << " is repeated " << Counter << "time(s)" << endl;
+	cout << SearchedElement << " is repeated " << Counter << " time(s)" << endl;
 }
 
 
