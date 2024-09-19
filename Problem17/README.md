@@ -1,4 +1,4 @@
-/# Problem 17: 3-Letter Password Brute Force
+# Problem 17: 3-Letter Password Brute Force
 
 ## Description
 This C++ program brute-forces a 3-letter password entered by the user. The password must be composed of uppercase letters. The program systematically tries all possible combinations of three uppercase letters and compares them to the user-entered password.
