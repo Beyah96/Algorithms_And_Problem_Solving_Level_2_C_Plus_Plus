@@ -16,30 +16,30 @@ This C++ program allows the user to input a sequence of numbers in increasing or
 
 **Function Breakdown:**
 
-### `int ReadNumber(string Message)`
+**`int ReadNumber(string Message)`**
 - This function prompts the user to enter a number. It ensures that the number is non-negative, displaying a custom message. It returns the number.
 
-### `void FillArray(int Arr[100], int& Length)`
+**`void FillArray(int Arr[100], int& Length)`**
 - This function fills an array with user-input values in a strictly increasing order.
 - It ensures that each entered element is greater than or equal to the previous one. If an invalid number is entered (i.e., smaller than the previous number), the user is prompted to re-enter it.
 
-### `int RandomNumber(int From, int To)`
+**`int RandomNumber(int From, int To)`**
 - Generates a random number within the specified range `[From, To]` using the formula: `rand() % (To - From + 1) + From`.
 
-### `bool ExistInArray(int Arr[100], int Number)`
+**`bool ExistInArray(int Arr[100], int Number)`**
 - This function checks whether a specific number already exists in the array. It returns `true` if the number exists, and `false` otherwise.
 
-### `void ShuffleIndexesFrom1toN(int indexes[100], int Length)`
+**`void ShuffleIndexesFrom1toN(int indexes[100], int Length)`**
 - Generates an array of shuffled indexes ranging from 0 to `Length - 1`. 
 - Ensures no duplicate indexes by using `ExistInArray()`.
 
-### `void ShuffleArray(int Arr[100], int indexes[100], int Arrshuffled[100], int Length)`
+**`void ShuffleArray(int Arr[100], int indexes[100], int Arrshuffled[100], int Length)`**
 - Shuffles the original array by using the shuffled indexes. It rearranges the elements of `Arr` based on the random indexes generated and stores the result in `Arrshuffled`.
 
-### `void PrintArray(int Arr[100], int Length, string Message)`
+**`void PrintArray(int Arr[100], int Length, string Message)`**
 - This function prints the contents of the array, displaying each element's index and value in a formatted manner. It takes a custom message to be printed before the array elements.
 
-### `main()`
+**`main()`**
 - The `main()` function controls the flow of the program:
   1. Calls `FillArray()` to allow the user to input numbers in increasing order.
   2. Calls `ShuffleIndexesFrom1toN()` to generate random indexes for shuffling.
