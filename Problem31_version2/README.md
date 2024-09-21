@@ -17,26 +17,26 @@ This C++ program allows the user to input a sequence of numbers and then shuffle
 
 **Function Breakdown:**
 
-### `int RandomNumber(int From, int To)`
+1. **`int RandomNumber(int From, int To)`**
 - Generates a random number within the specified range `[From, To]` using the formula: `rand() % (To - From + 1) + From`.
 
-### `int ReadNumber(string Message)`
+2. **`int ReadNumber(string Message)`**
 - Prompts the user to enter a non-negative number, displaying a custom message. It returns the input number.
 
-### `void FillArray(int Arr[100], int& Length)`
+3. **`void FillArray(int Arr[100], int& Length)`**
 - This function fills an array with user-input values.
 - It first reads the desired length of the array and then prompts the user to enter each element.
 
-### `void Swap(int& Number1, int& Number2)`
+4. **`void Swap(int& Number1, int& Number2)`**
 - A helper function that swaps two integers by reference. This is used during the shuffling process.
 
-### `void ShuffleArray(int Arr[100], int Length)`
+5. **`void ShuffleArray(int Arr[100], int Length)`**
 - Shuffles the array by swapping each element in the first half of the array with a randomly chosen element from the second half.
 
-### `void PrintArray(int Arr[100], int Length)`
+6. **`void PrintArray(int Arr[100], int Length)`**
 - Prints the contents of the array, displaying each element's index and value in a formatted manner.
 
-### `main()`
+7. **`main()`**
 - The `main()` function orchestrates the flow of the program:
   1. Calls `FillArray()` to allow the user to input numbers.
   2. Displays the original array before shuffling.
