@@ -2,6 +2,8 @@
 
 ## Description
 This program checks if an array of integers is a palindrome. An array is called a **palindrome** if its sequence of elements is identical when read from left to right and right to left.
+In this implementation, the palindrome check is optimized by iterating through only half of the array, reducing unnecessary comparisons and improving performance.
+
 
 ## Explanation of the Code
 
@@ -36,9 +38,9 @@ This program checks if an array of integers is a palindrome. An array is called 
  ```
 ./problem41
  ```
-* The program will prompt the user to specify how many random numbers to generate.
-* It will then generate the numbers, filter out the prime numbers, and print both the original list and the list of prime numbers.
-
+* FillArray: Initializes the array.
+* IsPalindrome: Checks if the array is a palindrome.
+* PrintIsPalindrome: Displays the result.
 ## Example
 - Given the predefined array:
  ```
