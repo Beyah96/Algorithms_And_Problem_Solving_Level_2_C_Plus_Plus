@@ -5,20 +5,20 @@ This C++ program allows the user to input a variable number of integers into an 
 
 ## Code Breakdown
 
-### 1. **Function `ReadNumber`**
+1. **Function `ReadNumber`**
    - This function prompts the user to enter a non-negative integer and validates the input.
    - It displays a custom message and ensures that only non-negative numbers are accepted.
 
-### 2. **Function `FillArray`**
+2. **Function `FillArray`**
    - This function reads numbers from the user to fill the array.
    - It initializes the `Length` of the array to zero and uses a loop to read numbers until the user decides to stop.
    - After each input, it prompts the user to indicate whether they want to continue adding more numbers.
 
-### 3. **Function `PrintArray`**
+3. **Function `PrintArray`**
    - This function prints the elements of the array.
    - It displays each element along with its corresponding index.
 
-### 4. **Function `main`**
+4. **Function `main`**
    - The entry point of the program.
    - It declares an array and its length, then calls `FillArray` to populate the array and `PrintArray` to display the results.
 
