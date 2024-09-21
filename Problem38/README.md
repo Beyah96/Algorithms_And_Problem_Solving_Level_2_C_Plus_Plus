@@ -5,29 +5,29 @@ This C++ program generates a list of random integers, then filters out the odd n
 
 ## Code Breakdown
 
-### 1. **Enumeration `enOddOrEven`**
+1. **Enumeration `enOddOrEven`**
    - Defines an enumeration type to categorize numbers as either `Odd` or `Even`.
 
-### 2. **Function `ReadNumber`**
+2. **Function `ReadNumber`**
    - Prompts the user for a positive integer input, ensuring that only non-negative values are accepted.
 
-### 3. **Function `RandomNumber`**
+3. **Function `RandomNumber`**
    - Generates a random integer between a specified range (`From` and `To`).
 
-### 4. **Function `FillArray`**
+4. **Function `FillArray`**
    - Fills an array with random numbers, based on the number of elements specified by the user.
 
-### 5. **Function `CheckNumber`**
+5. **Function `CheckNumber`**
    - Checks if a given number is odd or even and returns the appropriate enumeration (`Odd` or `Even`).
 
-### 6. **Function `CopyOddNumbers`**
+6. **Function `CopyOddNumbers`**
    - Iterates through the original array and copies the odd numbers into a separate array.
    - It checks each number using the `CheckNumber` function and appends only odd numbers to the `OddArray`.
 
-### 7. **Function `PrintArray`**
+7. **Function `PrintArray`**
    - Prints the contents of an array, along with a message to label the output.
 
-### 8. **Function `main`**
+8. **Function `main`**
    - This is the entry point of the program.
    - It initializes two arrays: one for the original list of numbers and one for storing odd numbers.
    - After generating the original array, it copies only the odd numbers to the second array and prints both arrays.
