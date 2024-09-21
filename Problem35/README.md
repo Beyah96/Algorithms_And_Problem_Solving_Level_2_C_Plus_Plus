@@ -7,37 +7,37 @@ The key difference between this problem and Problem 34 is the introduction of a 
 
 ## Code Breakdown
 
-### 1. **Function `ReadNumber`**
+1. **Function `ReadNumber`**
    - This function prompts the user to enter a non-negative integer, displaying a custom message.
    - It ensures the input number is valid (no negative numbers allowed).
 
-### 2. **Function `RandomNumber`**
+2. **Function `RandomNumber`**
    - Generates a random integer between two given bounds (`From` and `To`).
    - It is used to fill the array with random values between 1 and 100.
 
-### 3. **Function `FillArray`**
+3. **Function `FillArray`**
    - Fills an array with random numbers based on user input for the desired number of elements.
    - Calls `RandomNumber` to assign a random value between 1 and 100 to each array element.
 
-### 4. **Function `SearchNumberInArray`**
+4. **Function `SearchNumberInArray`**
    - This function iterates through the array to find if the searched number exists.
    - Returns the index of the number if found, otherwise returns `-1`.
 
-### 5. **Function `IsNumberInArray`**
+5. **Function `IsNumberInArray`**
    - A helper function that checks whether the searched number exists in the array.
    - Returns `true` if the number is found, otherwise `false`.
 
-### 6. **Function `PrintSearchedNumber`**
+6. **Function `PrintSearchedNumber`**
    - Prints whether the number was found or not based on the result of `IsNumberInArray`.
 
-### 7. **Function `SearchNumber`**
+7. **Function `SearchNumber`**
    - Prompts the user to input a number to search for.
    - Prints the searched number and calls `PrintSearchedNumber` to display the result.
 
-### 8. **Function `PrintArray`**
+8. **Function `PrintArray`**
    - Prints the entire array, showing the values stored in each index.
 
-### 9. **Function `main`**
+9. **Function `main`**
    - Calls the main flow of the program:
      1. Fills the array with random values.
      2. Prints the array.
