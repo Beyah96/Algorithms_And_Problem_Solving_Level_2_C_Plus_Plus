@@ -27,6 +27,8 @@ bool IsPalindrome(int Arr[100], int Length) {
 	for (int i = 0; i < floor(Length / 2); i++)
 		if (Arr[i] == Arr[Length - i - 1])
 			Counter++;
+		else
+			break;
 	return (Counter == floor(Length/2));
 }
 
@@ -34,7 +36,7 @@ void PrintIsPalindrome(bool Palindrome) {
 	if (Palindrome)
 		cout << "Yes is Palindrome !";
 	else 
-		cout << "Not, it is not Palindrome !";
+		cout << "No, it is not Palindrome !";
 
 }
 
