@@ -14,9 +14,9 @@ float ReadNumber() {
 int MyRound(float Number) {
 	if ((int)abs((Number * 10)) % 10 >= 5)
 		if (Number > 0)
-			Number += 1;
+			Number++;
 		else
-			Number -= 1;
+			Number--;
 	return int(Number);
 }
 
