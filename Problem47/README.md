@@ -78,5 +78,4 @@ For instance, with `Number = -3.67`, the expression works as follows:
 Thus, the expression captures the first digit after the decimal point, which is essential for determining if rounding up is needed.
 ## Requirements
 - A C++ compiler such as g++
-- Basic understanding of arrays and loops
-- The program allows up to 100 elements in the array (hardcoded limit).
+- Basic understanding of C++;
