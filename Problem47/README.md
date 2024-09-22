@@ -7,10 +7,10 @@ This C++ program reads a floating-point number from the user and rounds it to th
 
 ## Code Breakdown
 
-### 1. **Function `ReadNumber`**
+1. **Function `ReadNumber`**
    - Prompts the user to input a floating-point number and returns that value.
 
-### 2. **Function `MyRound`**
+2. **Function `MyRound`**
    - A custom implementation of rounding that uses the following logic:
      - First, it converts the absolute value of the number into an integer by multiplying it by 10 and then taking the modulus 10:
        ```cpp
@@ -26,7 +26,7 @@ This C++ program reads a floating-point number from the user and rounds it to th
 
      - Finally, the rounded integer value is returned.
 
-### 3. **Function `main`**
+3. **Function `main`**
    - The entry point of the program:
      - Reads a floating-point input from the user.
      - Displays the rounded number using both the `MyRound` function and the built-in `round` function for comparison.
