@@ -18,16 +18,17 @@ This C++ program reads a floating-point number from the user and calculates its 
   }
 ```
 2. **Function `MyFloor`**
-* The custom implementation of the `floor` function.
-* The logic checks if the number is negative. If so, it decreases the number by `1` before converting it to an integer. This ensures that the number is rounded down toward negative infinity.
+* This custom implementation of the `floor` function first calculates the `absolute` value of the input and checks if the number has any fractional part. If the `number` is negative and has a fractional part, it is decremented by `1` to achieve `floor` behavior.
 * For example:
   * Input: `-3.2`, the function subtracts `1` to get `-4`, then returns `-4`.
   * Input: `3.7`, the function directly returns `3` by truncating the decimal part.
 ```cpp
   int MyFloor(float Number) {
-    if (Number < 0)
+    float AbsNumber = abs(Number);
+    if (AbsNumber > int(AbsNumber))  // Checks if there is a fractional part
+      if (Number < 0)  // Applies only to negative numbers
         Number--;
-    return int(Number);
+    return int(Number);  // Returns the floored value
 }
 ```
 3. **Function `main`**
@@ -38,10 +39,14 @@ This C++ program reads a floating-point number from the user and calculates its 
 ## Key Expression in `MyFloor`
 
 ```Cpp
-  if (Number < 0)
+  float AbsNumber = abs(Number);
+  if (AbsNumber > int(AbsNumber))
+    if (Number < 0)
       Number--;
   return int(Number);
 ```
+* `float AbsNumber = abs(Number)`: Stores the absolute value of the number to check for any fractional part.
+* `if (AbsNumber > int(AbsNumber))`: Checks if the absolute number has a fractional part (i.e., non-zero decimals).
 * `if (Number < 0)`: Checks if the number is negative.
 * `Number--`: If negative, subtracts 1 from the number before converting it into an integer to ensure the number rounds toward negative infinity.
 * `int(Number)`: Converts the number into an integer by truncating the decimal part.

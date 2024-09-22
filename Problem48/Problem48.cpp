@@ -12,6 +12,8 @@ float ReadNumber() {
 }
 
 int MyFloor(float Number) {
+	float AbsNumber = abs(Number);
+	if (AbsNumber > int(AbsNumber))
 		if (Number < 0)
 			Number--;
 	return int(Number);
