@@ -53,8 +53,8 @@ This C++ program reads a floating-point number from the user and rounds it to th
  ```
  -  Output:
 ```
-- My Round : 5
-- C++ Round : 5
+My Round : 5
+C++ Round : 5
 ```
 
 ## Explanation of the Expression
@@ -70,10 +70,10 @@ The expression used in the custom rounding logic:
 
 For instance, with `Number = -3.67`, the expression works as follows:
 ```
-* Number * 10 = -36.7
-* abs(-36.7) = 36.7
-* (int)36.7 = 36
-* 36 % 10 = 6
+Number * 10 = -36.7
+abs(-36.7) = 36.7
+(int)36.7 = 36
+36 % 10 = 6
 ```
 Thus, the expression captures the first digit after the decimal point, which is essential for determining if rounding up is needed.
 ## Requirements
