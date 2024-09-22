@@ -12,8 +12,10 @@ float ReadNumber() {
 }
 
 int MyCeil(float Number) {
-	if (Number > 0)
-		Number++;
+	float AbsNumber = abs(Number);
+	if (AbsNumber > int(AbsNumber))
+		if (Number > 0)
+			Number++;
 	return int(Number);
 }
 

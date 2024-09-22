@@ -7,7 +7,7 @@ This C++ program reads a floating-point number from the user and calculates its 
 
 ## Code Breakdown
 
-### 1. **Function `ReadNumber`**
+1. **Function `ReadNumber`**
 - This function prompts the user to input
   floating-point number and returns that value.
  ```cpp
@@ -18,18 +18,22 @@ This C++ program reads a floating-point number from the user and calculates its 
      return Number;
  }
 ```
-2. **Function `Ceil`**
-* This is the custom implementation of the `ceil` function.
-* The logic checks if the number is positive. If so, it adds 1 to the number before converting it to an integer to ensure it rounds up toward positive infinity.
-* For example:
-  * Input: `3.2`, the function adds `1` to get `4`, then returns `4`.
-  * Input: `-2.7`, the function directly returns `-2` because no rounding up is necessary for negative numbers.
+2. **Function `MyCeil`**
+- This is the custom implementation of the `ceil` function.
+- The logic first calculates the absolute value of the number (`AbsNumber`) to handle both positive and negative numbers uniformly when checking for decimal places.
+- It then checks if the number has a decimal part (i.e., if the absolute value is greater than its integer part). If so, and the number is positive, it increments the number to round it up.
+- For example:
+- Input: `3.2` will be incremented to `4`, then return `4`.
+- Input: `-2.7` will be truncated to `-2` without incrementing since negative numbers don’t need to be rounded up.
 ```cpp
-  int MyCeil(float Number) {
-    if (Number > 0)
-        Number++;
-    return int(Number);
-}
+ int MyCeil(float Number) {
+   float AbsNumber = abs(Number);
+   if (AbsNumber > int(AbsNumber)) {
+     if (Number > 0)
+       Number++;
+     }
+   return int(Number);
+ }
 ```
 3. **Function `main`**
 * This is the entry point of the program.
