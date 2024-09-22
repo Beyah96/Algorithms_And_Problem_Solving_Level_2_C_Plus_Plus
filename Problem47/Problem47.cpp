@@ -11,21 +11,14 @@ float ReadNumber() {
 	return Number;
 }
 
-float MyABS(float Number) {
-	if (Number < 0)
-		Number *= -1;
-	return Number;
-}
-
 int MyRound(float Number) {
 	if ((int)abs((Number * 10)) % 10 >= 5)
 		if (Number > 0)
 			Number += 1;
 		else
-			Number = Number-1;
+			Number -= 1;
 	return int(Number);
 }
-
 
 int main() {
 	float Number = ReadNumber();
