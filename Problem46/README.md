@@ -7,15 +7,15 @@ This C++ program prompts the user to input a number and calculates its absolute 
 
 ## Code Breakdown
 
-### 1. **Function `ReadNumber`**
+1. **Function `ReadNumber`**
    - Prompts the user to input an integer and returns that value.
 
-### 2. **Function `MyABS`**
+2. **Function `MyABS`**
    - A custom implementation of the absolute value function.
    - If the input number is negative, it multiplies it by `-1` to make it positive.
    - Returns the absolute value of the number.
 
-### 3. **Function `main`**
+3. **Function `main`**
    - The entry point of the program:
      - Reads an integer input from the user.
      - Displays the absolute value of the input number using both the `MyABS` function and the built-in `abs` function for comparison.
