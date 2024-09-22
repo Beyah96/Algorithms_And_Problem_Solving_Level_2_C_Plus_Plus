@@ -55,7 +55,8 @@ This C++ program reads a floating-point number from the user and rounds it to th
 ```
 - My Round : 5
 - C++ Round : 5
-```s
+```
+
 ## Explanation of the Expression
 The expression used in the custom rounding logic:
 ```
