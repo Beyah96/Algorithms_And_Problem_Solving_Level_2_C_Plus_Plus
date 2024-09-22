@@ -43,10 +43,15 @@ This C++ program reads a floating-point number from the user and calculates its 
 ## Key Expression in `MyCeil`
 
 ```Cpp
-  if (Number > 0)
-    Number++;
-  return int(Number);
+  float AbsNumber = abs(Number);
+   if (AbsNumber > int(AbsNumber)) {
+     if (Number > 0)
+       Number++;
+     }
+   return int(Number);
 ```
+* `float AbsNumber = abs(Number)`: Stores the absolute value of the number to check for any fractional part.
+* `if (AbsNumber > int(AbsNumber))`: Checks if the absolute number has a fractional part (i.e., non-zero decimals).
 * `if (Number > 0)`: Checks if the number is positive.
 * `Number++`: If positive, adds 1 to the number before converting it into an integer to ensure the number rounds toward positive infinity.
 * `int(Number)`: Converts the number into an integer by truncating the decimal part.
