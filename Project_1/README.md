@@ -114,12 +114,12 @@ Here are some suggested improvements for future iterations:
 **Compilation**
 You can compile the program using a C++ compiler. For example:
 ```
-g++ -o rock_paper_scissors rock_paper_scissors.cpp
+g++ -o project_1 project_1.cpp
 ```
 **Execution**
 Run the compiled program:
 ```
-./rock_paper_scissors
+./project_1
 ```
 
 ## Final Thoughts
