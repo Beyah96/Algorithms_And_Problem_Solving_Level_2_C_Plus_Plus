@@ -13,7 +13,7 @@ int ReadNumber(string Message, int Limit) {
 	do {
 		cout << Message;
 		cin >> Number;
-	} while (Number < 0 && Number > Limit);
+	} while (Number < 0 || Number > Limit);
 	return Number;
 }
 
@@ -44,14 +44,12 @@ void ScreenColor(enHwoWon Winner) {
 
 
 string CheckFinalWinner(int FinalScores[3], int NumberOfRounds) {
-	string Winner;
 	if (FinalScores[0] > FinalScores[1])
-		Winner = "Player";
+		return "Player";
 	else if (FinalScores[1] > FinalScores[0])
-		Winner = "Computer";
+		return "Computer";
 	else
-		Winner = "No Winner";
-	return Winner;
+		return "No Winner";
 }
 
 string PrintChoice(enStonePaperScissor Choice) {
@@ -64,8 +62,7 @@ string PrintChoice(enStonePaperScissor Choice) {
 	case enStonePaperScissor::Scissor:
 		return "Scissor";
 	default:
-		cout << "Wrong Choice";
-		break;
+		return "Unkown choice";
 	}
 }
 
@@ -77,6 +74,8 @@ string RoundWinnerName(enHwoWon Winner) {
 		return "Computer";
 	case enHwoWon::Player:
 		return "Player";
+	default:
+		return "Unkwon winner";
 	}
 }
 void PrintRound(int RoundNumber, string User, string Computer, string RoundWinnerName) {
@@ -92,24 +91,16 @@ enHwoWon CheckWinner(int RoundNumber) {
 	enStonePaperScissor User, Computer;
 	User = UserChoice();
 	Computer = ComputerChoice();
-	if (User == Computer)
+	if (User == Computer) {
 		Score = enHwoWon::NoWinner;
+	}
+	else if ((User == enStonePaperScissor::Stone && Computer == enStonePaperScissor::Scissor) ||
+		(User == enStonePaperScissor::Paper && Computer == enStonePaperScissor::Stone) ||
+		(User == enStonePaperScissor::Scissor && Computer == enStonePaperScissor::Paper)) {
+		Score = enHwoWon::Player;
+	}
 	else {
-		if (User == enStonePaperScissor::Stone)
-			if (Computer == enStonePaperScissor::Paper)
-				Score = enHwoWon::Computer;
-			else
-				Score = enHwoWon::Player;
-		else if (User == enStonePaperScissor::Paper)
-			if (Computer == enStonePaperScissor::Stone)
-				Score = enHwoWon::Player;
-			else
-				Score = enHwoWon::Computer;
-		else
-			if (Computer == enStonePaperScissor::Stone)
-				Score = enHwoWon::Computer;
-			else
-				Score = enHwoWon::Player;
+		Score = enHwoWon::Computer;
 	}
 	ScreenColor(Score);
 	PrintRound(RoundNumber, PrintChoice(User), PrintChoice(Computer), RoundWinnerName(Score));
