@@ -135,6 +135,18 @@ void GameOver(stGameResult GameResult) {
 }
 
 
+void NewRound(stGameResult GameResult, stRoundInfo RoundInfo) {
+	GameResult.NumberOfRounds = ReadNumber("How many rounds 1 to 10? : ", 10);
+	string Choice;
+	for (int i = 0; i < GameResult.NumberOfRounds; i++) {
+		RoundInfo.RoundNumber = i + 1;
+		CheckWinner(GameResult, RoundInfo);
+	}
+	GameOver(GameResult);
+}
+
+
+
 
 
 
