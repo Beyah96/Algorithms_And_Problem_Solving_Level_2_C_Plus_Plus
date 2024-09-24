@@ -51,6 +51,7 @@ void ScreenColor(enWinner Winner) {
 
 	system(Message.c_str());
 }
+
 string CheckFinalWinner(stGameResult Game) {
 	if (Game.PlayerWonCount > Game.ComputerWonCount)
 		return "Player";
@@ -58,6 +59,19 @@ string CheckFinalWinner(stGameResult Game) {
 		return "Computer";
 	else
 		return "No Winner";
+}
+string PrintChoice(enChoice Choice) {
+	switch (Choice)
+	{
+	case enChoice::Stone:
+		return "Stone";
+	case enChoice::Paper:
+		return "Paper";
+	case enChoice::Scissor:
+		return "Scissor";
+	default:
+		return "Unkown choice";
+	}
 }
 
 
