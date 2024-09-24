@@ -28,7 +28,6 @@ int ReadNumber(string Message, int Limit) {
 	return Number;
 }
 
-
 int RandomNumber(int From, int To) {
 	return rand() % (To - From + 1) + From;
 }
@@ -39,5 +38,18 @@ enChoice PlayerChoiceFunction() {
 
 enChoice ComputerChoiceFunction() {
 	return (enChoice)RandomNumber(1, 3);
+}
+
+
+void ScreenColor(enWinner Winner) {
+	string Message;
+	if (Winner == enWinner::Computer)
+		Message = "color " + to_string(int(enWinner::Computer)) + "F";
+	else if (Winner == enWinner::Player)
+		Message = "color " + to_string(int(enWinner::Player)) + "F";
+	else
+		Message = "color " + to_string(int(enWinner::NoWinner)) + "F";
+
+	system(Message.c_str());
 }
 
