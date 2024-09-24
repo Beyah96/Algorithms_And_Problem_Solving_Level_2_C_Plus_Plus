@@ -60,6 +60,7 @@ string CheckFinalWinner(stGameResult Game) {
 	else
 		return "No Winner";
 }
+
 string PrintChoice(enChoice Choice) {
 	switch (Choice)
 	{
@@ -71,6 +72,19 @@ string PrintChoice(enChoice Choice) {
 		return "Scissor";
 	default:
 		return "Unkown choice";
+	}
+}
+
+string RoundWinnerName(enWinner Winner) {
+	switch (Winner) {
+	case enWinner::NoWinner:
+		return "No Winner";
+	case enWinner::Computer:
+		return "Computer";
+	case enWinner::Player:
+		return "Player";
+	default:
+		return "Unkwon winner";
 	}
 }
 
