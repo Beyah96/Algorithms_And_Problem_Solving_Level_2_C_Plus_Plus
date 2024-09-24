@@ -87,6 +87,14 @@ string RoundWinnerName(enWinner Winner) {
 		return "Unkwon winner";
 	}
 }
+void PrintRound(stRoundInfo Round) {
+	cout << "\n\n------------ Round " + to_string(Round.RoundNumber) + " ------------ \n";
+	cout << "Player   Choice : " << PrintChoice(Round.PlayerChoice) << endl;
+	cout << "Computer Choice : " << PrintChoice(Round.ComputerChoice) << endl;
+	cout << "Round   Winner  : " << RoundWinnerName(Round.Winner) << endl;
+	cout << "--------------------------------- \n\n";
+}
+
 
 
 
