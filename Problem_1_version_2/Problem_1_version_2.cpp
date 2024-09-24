@@ -87,6 +87,7 @@ string RoundWinnerName(enWinner Winner) {
 		return "Unkwon winner";
 	}
 }
+
 void PrintRound(stRoundInfo Round) {
 	cout << "\n\n------------ Round " + to_string(Round.RoundNumber) + " ------------ \n";
 	cout << "Player   Choice : " << PrintChoice(Round.PlayerChoice) << endl;
@@ -94,6 +95,29 @@ void PrintRound(stRoundInfo Round) {
 	cout << "Round   Winner  : " << RoundWinnerName(Round.Winner) << endl;
 	cout << "--------------------------------- \n\n";
 }
+void CheckWinner(stGameResult& GameResult, stRoundInfo& RoundInfo) {
+	RoundInfo.PlayerChoice = PlayerChoiceFunction();
+	RoundInfo.ComputerChoice = ComputerChoiceFunction();
+	if (RoundInfo.PlayerChoice == RoundInfo.ComputerChoice) {
+		GameResult.DrawCount++;
+		RoundInfo.Winner = enWinner::NoWinner;
+	}
+	else if ((RoundInfo.PlayerChoice == enChoice::Stone && RoundInfo.ComputerChoice == enChoice::Scissor) ||
+		(RoundInfo.PlayerChoice == enChoice::Paper && RoundInfo.ComputerChoice == enChoice::Stone) ||
+		(RoundInfo.PlayerChoice == enChoice::Scissor && RoundInfo.ComputerChoice == enChoice::Paper)) {
+		GameResult.PlayerWonCount++;
+		RoundInfo.Winner = enWinner::Player;
+	}
+	else {
+		GameResult.ComputerWonCount++;
+		RoundInfo.Winner = enWinner::Computer;
+		cout << "\a" << endl;
+	}
+	ScreenColor(RoundInfo.Winner);
+	PrintRound(RoundInfo);
+}
+
+
 
 
 
