@@ -145,6 +145,17 @@ void NewRound(stGameResult GameResult, stRoundInfo RoundInfo) {
 	GameOver(GameResult);
 }
 
+void NewGame(stGameResult GameResult, stRoundInfo& RoundInfo) {
+	char Play;
+	do {
+		NewRound(GameResult, RoundInfo);
+		cout << "Do you want to play again? (Y/N) ";
+		cin >> Play;
+	} while (Play == 'y' || Play == 'Y');
+
+}
+
+
 
 
 
