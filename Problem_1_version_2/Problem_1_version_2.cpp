@@ -40,7 +40,6 @@ enChoice ComputerChoiceFunction() {
 	return (enChoice)RandomNumber(1, 3);
 }
 
-
 void ScreenColor(enWinner Winner) {
 	string Message;
 	if (Winner == enWinner::Computer)
@@ -52,4 +51,14 @@ void ScreenColor(enWinner Winner) {
 
 	system(Message.c_str());
 }
+string CheckFinalWinner(stGameResult Game) {
+	if (Game.PlayerWonCount > Game.ComputerWonCount)
+		return "Player";
+	else if (Game.ComputerWonCount > Game.PlayerWonCount)
+		return "Computer";
+	else
+		return "No Winner";
+}
+
+
 
