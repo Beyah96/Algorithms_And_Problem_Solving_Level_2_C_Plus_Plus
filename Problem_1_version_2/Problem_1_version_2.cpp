@@ -33,4 +33,11 @@ int RandomNumber(int From, int To) {
 	return rand() % (To - From + 1) + From;
 }
 
+enChoice PlayerChoiceFunction() {
+	return (enChoice)ReadNumber("Your Choice [1] : Stone, [2] : Paper, [3] : Scissor ? : ", 4);
+}
+
+enChoice ComputerChoiceFunction() {
+	return (enChoice)RandomNumber(1, 3);
+}
 
