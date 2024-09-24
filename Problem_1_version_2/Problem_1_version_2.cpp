@@ -152,6 +152,13 @@ void NewGame(stGameResult GameResult, stRoundInfo& RoundInfo) {
 		cout << "Do you want to play again? (Y/N) ";
 		cin >> Play;
 	} while (Play == 'y' || Play == 'Y');
+}
+
+int main() {
+	srand((unsigned)time(NULL));
+	stGameResult GameResult;
+	stRoundInfo RoundInfo;
+	NewGame(GameResult, RoundInfo);
 
 }
 
