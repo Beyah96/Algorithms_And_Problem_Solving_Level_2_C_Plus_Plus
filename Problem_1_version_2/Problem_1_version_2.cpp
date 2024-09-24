@@ -95,6 +95,7 @@ void PrintRound(stRoundInfo Round) {
 	cout << "Round   Winner  : " << RoundWinnerName(Round.Winner) << endl;
 	cout << "--------------------------------- \n\n";
 }
+
 void CheckWinner(stGameResult& GameResult, stRoundInfo& RoundInfo) {
 	RoundInfo.PlayerChoice = PlayerChoiceFunction();
 	RoundInfo.ComputerChoice = ComputerChoiceFunction();
@@ -115,6 +116,22 @@ void CheckWinner(stGameResult& GameResult, stRoundInfo& RoundInfo) {
 	}
 	ScreenColor(RoundInfo.Winner);
 	PrintRound(RoundInfo);
+}
+
+
+void GameOver(stGameResult GameResult) {
+
+	cout << "\n\n\t\t-------------------------------------- \n";
+	cout << "\t\t     ++ + Game Over++ +     ";
+	cout << "\n\t\t-------------------------------------- \n";
+	cout << "\n\t\t----------- [Game Results] ----------- \n";
+	cout << "\t\tGame Rounds : " << GameResult.NumberOfRounds << endl;
+	cout << "\t\tPlayer won times : " << GameResult.PlayerWonCount << endl;
+	cout << "\t\tComputer won times: " << GameResult.ComputerWonCount << endl;
+	cout << "\t\tDraw times: " << GameResult.DrawCount << endl;
+	cout << "\t\tFinal Winner: " << CheckFinalWinner(GameResult) << endl;
+	cout << "\t\t-------------------------------------- \n";
+
 }
 
 
