@@ -26,8 +26,8 @@ The player can choose between these three options, and the computer will randoml
 ### 1. **Enumerations**
 
 The game uses enumerations to represent the possible choices and outcomes:
-- **`enStonePaperScissor`**: Represents Stone, Paper, or Scissors as integers (1, 2, and 3, respectively).
-- **`enHwoWon`**: Represents the result of a round (Player wins, Computer wins, or No Winner in the case of a tie).
+- **`enChoice`**: Represents Stone, Paper, or Scissors as integers (1, 2, and 3, respectively).
+- **`enWinner`**: Represents the result of a round (Player wins, Computer wins, or No Winner in the case of a tie).
 
 ### 2. **Random Number Generation**
 
@@ -55,25 +55,25 @@ The player chooses between options [1] Stone, [2] Paper, or [3] Scissors.
 4. **Winner Determination**
 The heart of the game is deciding who wins each round:
 ```Cpp
-enHwoWon CheckWinner(int RoundNumber) {
-    enStonePaperScissor User = UserChoice();
-    enStonePaperScissor Computer = ComputerChoice();
-    enHwoWon Score;
-
-    if (User == Computer) {
-        Score = enHwoWon::NoWinner;
-    } else if ((User == enStonePaperScissor::Stone && Computer == enStonePaperScissor::Scissor) ||
-               (User == enStonePaperScissor::Paper && Computer == enStonePaperScissor::Stone) ||
-               (User == enStonePaperScissor::Scissor && Computer == enStonePaperScissor::Paper)) {
-        Score = enHwoWon::Player;
-    } else {
-        Score = enHwoWon::Computer;
-    }
-
-    ScreenColor(Score);  // Changes console color to reflect who won.
-    PrintRound(RoundNumber, PrintChoice(User), PrintChoice(Computer), RoundWinnerName(Score));
-
-    return Score;
+enWinner CheckWinner(int RoundNumber) {
+	enWinner Score;
+	enChoice User, Computer;
+	User = UserChoice();
+	Computer = ComputerChoice();
+	if (User == Computer) {
+		Score = enWinner::NoWinner;
+	}
+	else if ((User == enChoice::Stone && Computer == enChoice::Scissor) ||
+		(User == enChoice::Paper && Computer == enChoice::Stone) ||
+		(User == enChoice::Scissor && Computer == enChoice::Paper)) {
+		Score = enWinner::Player;
+	}
+	else {
+		Score = enWinner::Computer;
+	}
+	SetScreenColor(Score);
+	PrintRoundDetails(RoundNumber, PrintChoice(User), PrintChoice(Computer), GetRoundWinnerName(Score));
+	return Score;
 }
 ```
 
