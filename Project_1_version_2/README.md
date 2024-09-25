@@ -1,4 +1,4 @@
-# Basik Project N°1 : Stone, Paper, Scissors Game
+# Basik Project N°1 Version n° 2: Stone, Paper, Scissors Game
 ![Difficulty](https://img.shields.io/badge/Project-Easy-8A2BE2)
 ![Level](https://img.shields.io/badge/Order-First%20C++%20Project-32CD32)
 ![C++](https://img.shields.io/badge/C%2B%2B-Beginner%20Friendly-00599C)
