@@ -1,8 +1,10 @@
 # Math Quiz Game Project
 
+
 ![Difficulty](https://img.shields.io/badge/Project-Easy-8A2BE2)
-![Level](https://img.shields.io/badge/Order-First%20`C++` %20Project-32CD32)
-![`C++` ](https://img.shields.io/badge/C%2B%2B-Beginner%20Friendly-00599C)
+![Level](https://img.shields.io/badge/Order-First%20C++%20Project-32CD32)
+![C++](https://img.shields.io/badge/C%2B%2B-Beginner%20Friendly-00599C)
+
 
 This project implements a basic **Math Quiz Game** in `C++`  where a player can test their math skills. The game generates questions based on the player's chosen difficulty level and operation type. The rules are simple:
 
