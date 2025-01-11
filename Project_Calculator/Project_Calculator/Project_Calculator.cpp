@@ -52,24 +52,15 @@ vector <short> GetOperationMembers(enLevel Level) {
 	}
 }
 
-enOperationType PickRandomOperation(vector <enOperationType> OperationsType) {
-	return OperationsType[GetRandomNumber(0, OperationsType.size())];
+enOperationType PickRandomOperation() {
+	return (enOperationType) GetRandomNumber(1,6);
 }
 
-vector <enOperationType> GetOperationsType(enOperationType OperationType) {
-	switch (OperationType)
-	{
-	case Add:
-		return { enOperationType::Add };
-	case Sub:
-		return { enOperationType::Sub };
-	case Mul:
-		return { enOperationType::Mul };
-	case Div:
-		return { enOperationType::Div };
-	case MixOperations:
-		return { GetOperationsType(PickRandomOperation({OperationType})) };
-	}
+enOperationType GetOperationsType(enOperationType OperationType) {
+	if (OperationType == enOperationType::MixOperations)
+		return GetOperationsType(PickRandomOperation());
+	else
+		return OperationType;
 }	
 
 int GetOperationResult(vector <short> vMembers, enOperationType PickedOpeation) {
@@ -88,27 +79,52 @@ int GetOperationResult(vector <short> vMembers, enOperationType PickedOpeation) 
 	}
 }
 
-enum enResult {Correct  = 1, Wrong = 2};
 
-bool isResultCorrect(enResult Result) {
-	return (Result == enResult::Correct) ? true : false;
+bool isResultCorrect(int Result, int userResult) {
+	return (Result == userResult) ? true : false;
 }
-short Score(enResult Result) {
-	return  isResultCorrect(Result) ? GameScore++ : GameScore ;
+short Score(int Result, int userResult) {
+	return  isResultCorrect(Result, userResult) ? GameScore++ : GameScore ;
 }
 
-
+char PrintOperationSign(enOperationType OperationType) {
+	switch (OperationType)
+	{
+	case Add:
+		return '+';
+	case Sub:
+		return '-';
+	case Mul:
+		return '*';
+	case Div:
+		return '/';
+	}
+}
 
 void PlayGame() {
 	short Number = AskUserForNumber("How many questions do you want to answer? : ", 0, 10); // Number of Rounds
 	enLevel Level = AskUserForLevel();
-
+	vector <short> vMembers;
 	enOperationType OperationType = AskUserForOperationType();
+	
+	vector <enOperationType> OperationsType;
+	int Result, userInput;
+	for (int i = 0; i < Number; i++)
+		OperationsType.push_back((GetOperationsType(OperationType)));
 
-	//cout << "Result : " << GetOperationResult(GetOperationMembers(), );
 	for (int i = 0; i < Number; i++) {
-		cout << "Question [" << i + 1 << "/" << Number <<"] :" << endl;
-		GetOperationMembers();
+		cout << endl << endl << "Question [" << i + 1 << "/" << Number <<"] :" << endl;
+		vMembers = GetOperationMembers(Level);
+		Result = GetOperationResult(vMembers, OperationsType[i]);
+		cout << vMembers[0] << endl << PrintOperationSign(OperationsType[i]) << endl << vMembers[1] << endl << "___________" << endl;
+		cin >> userInput;
+		cout << "The result : " << Result << endl;
+		cout << (isResultCorrect(Result, userInput)) ? "Correct" : "Wrong";
+		system("color 2F");
+		Score(Result, userInput);
+		cout << endl << "Score : " << GameScore;
+		vMembers.clear();
+		
 	}
 }
 int main() {
